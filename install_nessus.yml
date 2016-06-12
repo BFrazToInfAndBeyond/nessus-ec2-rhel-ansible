@@ -1,0 +1,5 @@
+---
+  - hosts: nessus
+    sudo: yes
+    roles:
+      - nessus

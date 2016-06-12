@@ -1,0 +1,16 @@
+---
+# tasks file for nessus
+  - name: install glibc
+    yum: name=glibc state=present
+
+  - name: install zlib
+    yum: name=zlib state=present
+
+  - name: Copy nessus rpm over
+    copy: src="{{nessus_local_path}}" dest={{ec2_home}} owner=root group=root mode=644
+
+  - name: Install nessus
+    yum: name="{{nessus_rpm_ec2_path}}"
+
+  - name: run nessus
+    service: name=nessusd state=started

@@ -1,0 +1,6 @@
+---
+# vars file for nessus
+  nessus_rpm: "Nessus-6.7.0-es6.x86_64.rpm"
+  nessus_local_path: "~/Downloads/{{nessus_rpm}}"
+  ec2_home: "/home/ec2-user"
+  nessus_rpm_ec2_path: "{{ec2_home}}/{{nessus_rpm}}"
